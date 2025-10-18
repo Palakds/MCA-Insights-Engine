@@ -55,13 +55,3 @@ Please follow these steps to set up the project environment locally.
     ```bash
     pip install -r requirements.txt
     ```
-
-## Running the Application
-
-The application is run in two stages.
-
-### Step 1: Run the Data Processing Script
-First, you must generate the change log and summary files.
-
-```bash
-python script/change_log.py
