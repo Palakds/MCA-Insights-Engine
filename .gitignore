@@ -1,0 +1,18 @@
+# Virtual Environment
+venv/
+*.venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# VS Code settings
+.vscode/
+
+# System files (macOS and Windows)
+.DS_Store
+Thumbs.db
+
+# Ignore large source data files
+Dataset/mah_roc_mca_data_1.csv
