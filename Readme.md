@@ -63,7 +63,7 @@ python script/change_log.py
 
 Note: This step is only necessary if the source data files are available. As mentioned in the "Data and Enrichment Notes," the pre-processed output files are already included in this repository.
 
-Step 2: Launch the Streamlit Dashboard
+### Step 2: Launch the Streamlit Dashboard
 Once the log files are available, you can launch the interactive dashboard.
 
 ```Bash
@@ -71,7 +71,7 @@ streamlit run script/dashboard.py
 ```
 This will automatically open the application in your web browser.
 
-Data and Enrichment Notes
+## Data and Enrichment Notes
 Please be aware of the following two points regarding the project's data:
 
 Source Data File Exclusion: The change_log.py script is designed to run against two source files. However, one source file (mah_roc_mca_data_1.csv, 137 MB) exceeds GitHub's 100 MB file limit and has been excluded from this repository via .gitignore. As such, the change_log.py script cannot be run as-is. The pre-processed output files (daily_change_log.csv, daily_summary.txt) are included in the repository, allowing the dashboard to be run immediately.
