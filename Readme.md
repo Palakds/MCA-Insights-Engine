@@ -1,43 +1,40 @@
 # MCA Insights Engine
 
-This project is a Python application built for the "MCA Insights Engine" assessment. It consolidates company data, detects daily changes, and provides an interactive Streamlit dashboard to search, analyze, and chat with the data.
+## Project Overview
 
-This implementation serves as a functional prototype demonstrating the core logic, as per the assignment guidelines.
+The MCA Insights Engine is a Python-based data processing and visualization application. It is designed to consolidate, track, and analyze company master data from the Ministry of Corporate Affairs (MCA).
 
----
+This implementation serves as a functional prototype, demonstrating core logic for data ingestion, change detection, and interactive analysis as required by the assessment. The application features a backend processing script for data normalization and a frontend Streamlit dashboard for search, visualization, and conversational queries.
 
-## Architecture & Workflow
+## Architecture and Workflow
 
-The project is built around two main Python scripts:
+The project's functionality is divided into two primary components:
 
-1.  **`script/change_log.py`**: This script handles all the backend data processing (Tasks A, B, and E1).
-    * It loads the two sample datasets (`mah_roc_mca_data_1.csv` and `mah_roc_mca_data_2.csv`).
-    * It cleans the data: strips column names, removes duplicates, and handles missing values.
-    * It performs **change detection** by comparing the two files to find:
-        * New Incorporations
-        * Deregistered/Removed Companies
-        * Field-level updates (e.g., CompanyStatus, AuthorizedCapital).
-    * It generates two output files in the `Dataset/` folder: `daily_change_log.csv` and `daily_summary.txt`.
+1.  **Backend Processing (`script/change_log.py`)**
+    This script manages all data processing tasks (Tasks A, B, and E1). Its responsibilities include:
+    * Loading and parsing the two sample MCA datasets.
+    * Data cleansing, which involves standardizing column names, removing duplicate entries, and handling null values.
+    * Executing change detection logic by comparing the two datasets to identify new incorporations, deregistrations, and field-level updates (e.g., CompanyStatus, AuthorizedCapital).
+    * Generating `daily_change_log.csv` and `daily_summary.txt` in the `Dataset/` directory.
 
-2.  **`script/dashboard.py`**: This script runs the frontend user interface using Streamlit (Tasks D and E2).
-    * It loads the master dataset, the change log, and the enriched data.
-    * It displays the "Daily AI Summary" on the sidebar.
-    * It provides filters (by Company Status) and a search bar (by Company Name or CIN).
-    * It displays enriched company details and their specific change history.
-    * It includes a "Chat with MCA Data" section that uses rule-based logic to answer natural language questions.
+2.  **Frontend Interface (`script/dashboard.py`)**
+    This script runs the user-facing application using Streamlit (Tasks D and E2). Its features include:
+    * Loading the master dataset, change log, and enriched data file.
+    * Displaying the "Daily AI Summary" in the sidebar.
+    * Providing interactive data filters (by Company Status and Registration Year) and a search bar (by Company Name or CIN).
+    * Presenting enriched company details and a log of their specific change history.
+    * A "Chat with MCA Data" interface that uses rule-based logic to respond to natural language queries.
 
----
+## Setup and Installation
 
-## Setup & Installation
-
-To run this project locally, please follow these steps.
+Please follow these steps to set up the project environment locally.
 
 ### Prerequisites
-* Python 3.9
+* Python 3.9+
 * `pip` (Python package installer)
 
 ### Installation
-1.  **Clone the repository (or download the ZIP):**
+1.  **Clone the repository:**
     ```bash
     git clone [https://github.com/your-username/mca-insights-engine.git](https://github.com/your-username/mca-insights-engine.git)
     cd mca-insights-engine
@@ -59,11 +56,9 @@ To run this project locally, please follow these steps.
     pip install -r requirements.txt
     ```
 
----
-
 ## Running the Application
 
-The application is run in two stages:
+The application is run in two stages.
 
 ### Step 1: Run the Data Processing Script
 First, you must generate the change log and summary files.
