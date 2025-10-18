@@ -66,9 +66,8 @@ Note: This step is only necessary if the source data files are available. As men
 Step 2: Launch the Streamlit Dashboard
 Once the log files are available, you can launch the interactive dashboard.
 
-``Bash
+```Bash
 streamlit run script/dashboard.py
-```
 ```
 This will automatically open the application in your web browser.
 
